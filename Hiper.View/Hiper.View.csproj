@@ -1,0 +1,47 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <ApplicationIcon>Images\hiper.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Images\btnAlterar.png" />
+    <None Remove="Images\btnCancelar.png" />
+    <None Remove="Images\btnConfirmar.png" />
+    <None Remove="Images\btnExcel.png" />
+    <None Remove="Images\btnExcelCor.png" />
+    <None Remove="Images\btnExcluir.png" />
+    <None Remove="Images\btnGravar.png" />
+    <None Remove="Images\btnIncluir.png" />
+    <None Remove="Images\btnPesquisar.png" />
+    <None Remove="Images\btnSair.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\btnExcelCor.png" />
+    <Resource Include="Images\btnSair.png" />
+    <Content Include="Images\hiper.png" />
+	<Content Include="Images\hiper.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\btnAlterar.png" />
+    <Resource Include="Images\btnCancelar.png" />
+    <Resource Include="Images\btnConfirmar.png" />
+    <Resource Include="Images\btnExcel.png" />
+    <Resource Include="Images\btnExcluir.png" />
+    <Resource Include="Images\btnGravar.png" />
+    <Resource Include="Images\btnIncluir.png" />
+    <Resource Include="Images\btnPesquisar.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Hiper.Domain\Hiper.Domain.csproj" />
+    <ProjectReference Include="..\Hiper.Shared\Hiper.Shared.csproj" />
+  </ItemGroup>
+
+</Project>

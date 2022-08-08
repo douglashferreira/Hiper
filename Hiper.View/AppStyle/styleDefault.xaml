@@ -1,0 +1,150 @@
+﻿<ResourceDictionary
+    xmlns:wpf="http://schemas.microsoft.com/netfx/2009/xaml/presentation"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <wpf:Style x:Key="sBtnPadrao" TargetType="{x:Type Button}">
+        <Setter Property="Width" Value="Auto" />
+        <Setter Property="Height" Value="25" />
+        <Setter Property="Margin" Value="2" />
+        <Setter Property="IsCancel" Value="false" />
+    </wpf:Style>
+
+    <Style
+        x:Key="sBtnNovo"
+        BasedOn="{StaticResource sBtnPadrao}"
+        TargetType="{x:Type Button}">
+        <Setter Property="ToolTip" Value="Incluir" />
+        <Setter Property="ContentTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <StackPanel
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Orientation="Horizontal">
+                        <Image
+                            Width="16"
+                            Height="16"
+                            Margin="1"
+                            Source="..\Images\btnIncluir.png" />
+                        <Label Padding="5,0" Content="_Incluir" />
+                    </StackPanel>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style
+        x:Key="sBtnSair"
+        BasedOn="{StaticResource sBtnPadrao}"
+        TargetType="{x:Type Button}">
+        <Setter Property="ToolTip" Value="Sair" />
+        <Setter Property="ContentTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <StackPanel
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Orientation="Horizontal">
+                        <Image
+                            Width="16"
+                            Height="16"
+                            Margin="1"
+                            Source="..\Images\btnSair.png" />
+                        <Label Padding="5,0" Content="_Sair" />
+                    </StackPanel>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style
+        x:Key="sBtnPesquisar"
+        BasedOn="{StaticResource sBtnPadrao}"
+        TargetType="{x:Type Button}">
+        <Setter Property="ToolTip" Value="Pesquisar" />
+        <Setter Property="ContentTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <StackPanel
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Orientation="Horizontal">
+                        <Image
+                            Width="16"
+                            Height="16"
+                            Margin="1"
+                            Source="..\Images\btnPesquisar.png" />
+                        <Label Padding="5,0" Content="_Pesquisar" />
+                    </StackPanel>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style
+        x:Key="sBtnGravar"
+        BasedOn="{StaticResource sBtnPadrao}"
+        TargetType="{x:Type Button}">
+        <Setter Property="ToolTip" Value="Gravar" />
+        <Setter Property="ContentTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <StackPanel
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Orientation="Horizontal">
+                        <Image
+                            Width="16"
+                            Height="16"
+                            Margin="1"
+                            Source="..\Images\btnGravar.png" />
+                        <Label Padding="5,0" Content="_Gravar" />
+                    </StackPanel>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="IsFocused" Value="True" />
+                </MultiTrigger.Conditions>
+                <Setter Property="Background" Value="#FFECECBA" />
+                <Setter Property="BorderBrush" Value="Green" />
+                <Setter Property="BorderThickness" Value="2" />
+            </MultiTrigger>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="IsKeyboardFocusWithin" Value="True" />
+                </MultiTrigger.Conditions>
+                <Setter Property="Background" Value="#FFECECBA" />
+                <Setter Property="BorderBrush" Value="Green" />
+                <Setter Property="BorderThickness" Value="2" />
+            </MultiTrigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style
+        x:Key="sBtnExportarExcel"
+        BasedOn="{StaticResource sBtnPadrao}"
+        TargetType="{x:Type Button}">
+        <Setter Property="ToolTip" Value="Exportar Excel" />
+        <Setter Property="ContentTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <StackPanel
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Orientation="Horizontal">
+                        <Image
+                            Width="16"
+                            Height="16"
+                            Margin="1"
+                            Source="..\Images\btnExcel.png" />
+                        <Label Padding="5,0" Content="Exportar _Excel" />
+                    </StackPanel>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+</ResourceDictionary>

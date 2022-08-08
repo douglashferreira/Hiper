@@ -1,0 +1,76 @@
+﻿<Window x:Class="Hiper.View.Forms.frmClient"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Cadastro de Clientes" Height="400" Width="650" Loaded="Window_Loaded" WindowStartupLocation="CenterOwner"> 
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="34"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="34"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" Margin="2">
+            <Label Content="Pesquisar:" Margin="2"/>
+            <TextBox Width="200" Margin="2" x:Name="txtPesquisa"/>
+            <ComboBox SelectedIndex="0" Margin="2" x:Name="cbTipoPesquisa">
+                <ComboBoxItem Content="Nome"/>
+                <ComboBoxItem Content="Documento"/>
+                <ComboBoxItem Content="Código"/>
+            </ComboBox>
+            <Button Style="{StaticResource sBtnPesquisar}" Margin="2" Width="80" x:Name="btnPesquisar" Click="btnPesquisar_Click"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="2" HorizontalAlignment="Right">
+            <Button x:Name="btnExcel" Style="{StaticResource sBtnExportarExcel}" Margin="2" Click="btnExcel_Click"/>
+            <Button x:Name="btnNew" Style="{StaticResource sBtnNovo}" Width="65" Margin="2" Click="btnNew_Click"/>
+        </StackPanel>
+        <Separator Grid.Row="1"/>
+        <DataGrid Grid.Row="2" x:Name="grdClientes" AutoGenerateColumns="False" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTemplateColumn Header="Alterar" IsReadOnly="True">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <Image
+                                            x:Name="imgAlterar"
+                                            Width="16"
+                                            Height="16"
+                                            Margin="1"
+                                            Cursor="Hand"
+                                            MouseDown="btnAlterarGrid_Click"
+                                            Source="..\Images\btnAlterar.png" />
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Width="50" Header="Excluir">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <Image
+                                            x:Name="imgExcluir"
+                                            Width="16"
+                                            Height="16"
+                                            Margin="1"
+                                            Cursor="Hand"
+                                            MouseDown="btnExcluirGrid_Click"
+                                            Source="..\Images\btnExcluir.png" />
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Header="Código" Binding="{Binding Id}"/>
+                <DataGridTextColumn Header="Nome" Binding="{Binding FirstName}"/>
+                <DataGridTextColumn Header="Sobreome" Binding="{Binding LastName}"/>
+                <DataGridTextColumn Header="Documento" Binding="{Binding Document}"/>
+                <DataGridTextColumn Header="Endereço" Binding="{Binding Street}"/>
+                <DataGridTextColumn Header="Cidade" Binding="{Binding City}"/>
+                <DataGridTextColumn Header="Estado" Binding="{Binding State}"/>
+                <DataGridTextColumn Header="Email" Binding="{Binding Email}"/>
+               
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label Grid.Row="3" Content="" Margin="2" x:Name="lblStatus"/>
+        <Button Style="{StaticResource sBtnSair}" Grid.Row="3" HorizontalAlignment="Right" Width="60" Margin="2" Click="Button_Click"/>
+        
+    </Grid>
+</Window>

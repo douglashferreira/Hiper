@@ -1,0 +1,13 @@
+﻿<Window x:Class="Hiper.View.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Demo Hiper" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <StackPanel>
+            <Button Width="120" Height="30" Content="Cadastro de Clientes" x:Name="btnCadCliente" Click="btnCadCliente_Click" HorizontalAlignment="left" VerticalAlignment="Top" Margin="2,4"/>
+            <Button Width="120" Height="30" Content="Importar Clientes" x:Name="btnImpCliente" Click="btnImpCliente_Click" HorizontalAlignment="left" VerticalAlignment="Top" Margin="2,4"/>
+            <Button Width="120" Height="30" Content="Consumir Clientes" x:Name="btnConsumeCliente" Click="btnConsumeCliente_Click" HorizontalAlignment="left" VerticalAlignment="Top" Margin="2,4"/>
+        </StackPanel>
+            
+    </Grid>
+</Window>
